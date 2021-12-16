@@ -1,5 +1,5 @@
 // PLEASE COMMENT THIS LINE IN DEVELOPMENT MODE
-// import 'module-alias/register';
+import 'module-alias/register';
 
 import app from './app';
 import config from './config/config';
