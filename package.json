@@ -8,8 +8,9 @@
   "repository": "https://github.com/HZN-one/webinar-gcp",
   "config": {
     "service_name": "webinar-gcp",
+    "image_name": "webinar-gcp-cloud-run",
     "region": "us-central1",
-    "project": "hzn-playground"
+    "project": "hzn-one"
   },
   "scripts": {
     "start": "node -r dotenv/config build/index.js",
@@ -19,8 +20,8 @@
     "build:watch": "tsc -w -p tsconfig.build.json",
     "lint": "eslint . --ext .ts,.tsx",
     "test": "jest i --colors --verbose --coverage",
-    "cloud:build": "gcloud builds submit --tag gcr.io/hzn-playground/$npm_package_config_service_name",
-    "cloud:run": "gcloud run deploy $npm_package_config_service_name --image gcr.io/hzn-playground/$npm_package_config_service_name --allow-unauthenticated --region $npm_package_config_region",
+    "cloud:build": "gcloud builds submit --tag gcr.io/$npm_package_config_project/$npm_package_config_image_name",
+    "cloud:run": "gcloud run deploy $npm_package_config_service_name --image gcr.io/$npm_package_config_project/$npm_package_config_image_name --allow-unauthenticated --region $npm_package_config_region",
     "cloud:run:new": "npm run cloud:build && npm run cloud:run",
     "docker:build": "docker build -t $npm_package_config_service_name .",
     "docker:run": "docker run -p 8080:8080 $npm_package_config_service_name",
