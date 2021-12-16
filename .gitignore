@@ -1,0 +1,8 @@
+*.rest
+.env
+.nyc_output
+build
+coverage
+node_modules
+secret-manager-*
+test-report*

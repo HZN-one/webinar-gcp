@@ -1,0 +1,650 @@
+{
+	"info": {
+		"_postman_id": "c14dd11d-e691-4452-bce9-ded3ba0b8c9f",
+		"name": "HZN - Partner - GoSend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"origin\": {\n        \"coordinate\": {\n            \"latitude\": \"-6.17519886515753\",\n            \"longitude\": \"106.82728991469234\"\n        }\n    },\n    \"destinations\": [\n        {\n            \"coordinate\": {\n                \"latitude\": \"-6.209666629916448\",\n                \"longitude\": \"106.80023964989091\"\n            }\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/prices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"prices"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Price",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"origin\": {\n        \"coordinate\": {\n            \"latitude\": \"-6.17519886515753\",\n            \"longitude\": \"106.82728991469234\"\n        }\n    },\n    \"destinations\": [\n        {\n            \"coordinate\": {\n                \"latitude\": \"-6.209666629916448\",\n                \"longitude\": \"106.80023964989091\"\n            }\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/prices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"prices"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10a-8TJv8PPEwtdC2oDtPl8a3QBsmII\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 07:56:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"status\": \"success\",\n        \"message\": \"ok\"\n    },\n    \"data\": [\n        {\n            \"amount\": 24000,\n            \"currency\": \"IDR\",\n            \"distance\": 9.3,\n            \"name\": \"GoSend\",\n            \"serviceType\": \"Instant\",\n            \"vehicleType\": \"\"\n        },\n        {\n            \"amount\": 18000,\n            \"currency\": \"IDR\",\n            \"distance\": 9.3,\n            \"name\": \"GoSend\",\n            \"serviceType\": \"Same Day\",\n            \"vehicleType\": \"\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"serviceType\": \"Instant\",\n    \"merchantOrderId\": \"123\",\n      \"sender\": {\n    \"firstName\": \"Beni\",\n      \"lastName\": \"\",\n        \"phone\": \"62812341111\"\n  },\n  \"origin\": {\n    \"address\": \"Jakarta\",\n      \"keywrods\": \"Pringsewu\",\n        \"coordinate\": {\n      \"latitude\": -5.3584,\n        \"longitude\": 104.972432\n    }\n  },\n  \"destinations\": [\n    {\n      \"address\": \"Jakarta\",\n      \"keywrods\": \"Jakarta\",\n      \"coordinate\": {\n        \"latitude\": -5.363487,\n        \"longitude\": 104.981135\n      },\n      \"items\": [\n        {\n          \"name\": \"Piring Cantik\"\n        }\n      ],\n      \"recipient\": {\n        \"firstName\": \"Didik\",\n        \"lastName\": \"\",\n        \"phone\": \"6212342222\"\n      }\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"serviceType\": \"Instant\",\n    \"merchantOrderId\": \"123\",\n      \"sender\": {\n    \"firstName\": \"Beni\",\n      \"lastName\": \"\",\n        \"phone\": \"62812341111\"\n  },\n  \"origin\": {\n    \"address\": \"Jakarta\",\n      \"keywrods\": \"Pringsewu\",\n        \"coordinate\": {\n      \"latitude\": -5.3584,\n        \"longitude\": 104.972432\n    }\n  },\n  \"destinations\": [\n    {\n      \"address\": \"Jakarta\",\n      \"keywrods\": \"Jakarta\",\n      \"coordinate\": {\n        \"latitude\": -5.363487,\n        \"longitude\": 104.981135\n      },\n      \"items\": [\n        {\n          \"name\": \"Piring Cantik\"\n        }\n      ],\n      \"recipient\": {\n        \"firstName\": \"Didik\",\n        \"lastName\": \"\",\n        \"phone\": \"6212342222\"\n      }\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"orders"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "82"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"52-6KupYZYZhvjXfoMkTzNWufLpJlg\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 08:01:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"status\": \"success\",\n        \"message\": \"ok\"\n    },\n    \"data\": {\n        \"deliveryId\": \"GK-11-1813714\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Order by order No",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/v1/orders/GK-11-1813714",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"orders",
+						"GK-11-1813714"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/orders/GK-11-1813714",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"orders",
+								"GK-11-1813714"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "411"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19b-VLbOm6tGahJW6ksdHnt//cb6TgQ\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 08:01:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"status\": \"success\",\n        \"message\": \"ok\"\n    },\n    \"data\": {\n        \"orderId\": \"GK-11-1813714\",\n        \"status\": \"NEW\",\n        \"driver\": {\n            \"id\": null,\n            \"name\": null,\n            \"phone\": null,\n            \"photo\": null\n        },\n        \"vehicleType\": {\n            \"number\": null\n        },\n        \"serviceType\": \"Instant\",\n        \"currency\": {\n            \"code\": \"IDR\",\n            \"symbol\": \"Rp\",\n            \"exponent\": 2\n        },\n        \"discountAmount\": 0,\n        \"finalAmount\": 8000,\n        \"origin\": {\n            \"address\": \"Jakarta\"\n        },\n        \"destinations\": [\n            {\n                \"address\": \"Jakarta\"\n            }\n        ],\n        \"isUseInsurance\": false,\n        \"insuranceAmount\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Cancel Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/v1/orders/GK-11-1813714",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"orders",
+						"GK-11-1813714"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Cancel Order",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4000/v1/orders/GK-11-1813749",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"orders",
+								"GK-11-1813749"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"77-VinpYIrP4Vmp2S7/LymTHirO2LM\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 08:47:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"status\": \"success\",\n        \"message\": \"ok\"\n    },\n    \"data\": {\n        \"isCancelled\": true,\n        \"isSuccess\": true,\n        \"message\": \"Booking cancelled\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Send notifications",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"entity_id\": \"123\",\n        \"type\": \"COMPLETED\",\n        \"event_date\": \"\",\n        \"event_id\": \"\",\n        \"partner_id\": \"\",\n        \"booking_id\": \"\",\n        \"status\": \"Enroute Pickup\",\n        \"cancelled_by\": \"\",\n        \"booking_type\": \"\",\n        \"driver_name\": \"John\",\n        \"driver_phone\": \"6289123121\",\n        \"driver_phone2\": \"\",\n        \"driver_phone3\": \"\",\n        \"driver_photo_url\": \"https://\",\n        \"receiver_name\": \"Anthony\",\n        \"total_distance_in_kms\": 10,\n        \"pickup_eta\": \"\",\n        \"delivery_eta\": \"\",\n        \"price\": 0,\n        \"cancellation_reason\": \"\",\n        \"attributes\": {\n          \"key1\": \"\",\n          \"key2\": \"\"\n        },\n        \"liveTrackingUrl\": \"https://\"\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/v1/notifications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"v1",
+						"notifications"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Send notifications",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"entity_id\": \"123\",\n        \"type\": \"COMPLETED\",\n        \"event_date\": \"\",\n        \"event_id\": \"\",\n        \"partner_id\": \"\",\n        \"booking_id\": \"\",\n        \"status\": \"Enroute Pickup\",\n        \"cancelled_by\": \"\",\n        \"booking_type\": \"\",\n        \"driver_name\": \"John\",\n        \"driver_phone\": \"6289123121\",\n        \"driver_phone2\": \"\",\n        \"driver_phone3\": \"\",\n        \"driver_photo_url\": \"https://\",\n        \"receiver_name\": \"Anthony\",\n        \"total_distance_in_kms\": 10,\n        \"pickup_eta\": \"\",\n        \"delivery_eta\": \"\",\n        \"price\": 0,\n        \"cancellation_reason\": \"\",\n        \"attributes\": {\n          \"key1\": \"\",\n          \"key2\": \"\"\n        },\n        \"liveTrackingUrl\": \"https://\"\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/v1/notifications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"v1",
+								"notifications"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+						},
+						{
+							"key": "X-DNS-Prefetch-Control",
+							"value": "off"
+						},
+						{
+							"key": "Expect-CT",
+							"value": "max-age=0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "X-Download-Options",
+							"value": "noopen"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Permitted-Cross-Domain-Policies",
+							"value": "none"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 12 Oct 2021 08:22:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
